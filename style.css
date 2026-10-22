@@ -1,0 +1,12 @@
+body{
+    background-image:url(images/image4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(48, 46, 46);
+}
+
+.desktop-icons{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+}
