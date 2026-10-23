@@ -19,18 +19,156 @@ body {
 }
 
 #loading-screen {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    z-index: 9999;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-
-    background-color: black;
-    color: white;
+    opacity: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    z-index: 9999;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
+
+#dot1 {
+    animation: loading-dot 0.6s infinite forwards;
+}
+
+#dot2 {
+    animation: loading-dot 0.6s infinite forwards;
+    animation-delay: 0.2s;
+}
+
+#dot3 {
+    animation: loading-dot 0.6s infinite forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes loading-dot {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#loading-screen.off-screen {
+    opacity: 0 !important;
+    display: none;
+}
+
+.taskbar {
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-bottom: 3px solid #808080;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+#startBtn {
+    background: transparent;
+    border-radius: 50%;
+    border: 0;
+}
+
+.timeShow {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    text-align: end;
+    font-size: 10px;
+}
+
+#sideInfo {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    align-items: end;
+}
+
+#homePage {
+    display: none;
+
+}
+
+#homePage.show {
+    position: absolute;
+
+    background-color: #e5e5e5;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-areas: "header header" "sidebar main";
+    border: 2px solid black;
+
+    border-radius: 8px;
+    width: 50vw;
+    height: 50vh;
+    left: 20%;
+    top: 15%;
+    z-index: 10;
+
+}
+
+#homePage.fs {
+    width: 95vw;
+    height: 95vh;
+}
+
+.buttonBar {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #c0c0c0;
+    grid-area: header;
+    gap: 2px;
+}
+
+.searchBar {
+    background-color: #c0c0c0;
+}
+
+.navBar {
+    grid-area: sidebar;
+    background-color: #d6d6d6;
+}
+
+.infoTab-h {
+    background-color: #e5e5e5;
+    grid-area: main;
+}
+
+.closeBtn {
+    background-color: #e16150;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.maximizeBtn {
+    background-color: #e18350;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.buttonBar {
+    cursor: grab;
+    user-select: none;
+}
+
+.buttonBar:active {
+    cursor: grabbing;
+}
+
+

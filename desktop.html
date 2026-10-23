@@ -6,36 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="desktop.js"></script>
+
+    <script src="desktop.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="loading-screen">...loading</div>
-    <div class="desktop-icons">
-        <div class="desktop-icon">
-            <img src="assets/icons/projects.jpg" height="64px" width="64px">
-            <p id="app-name">My Projects</p>
+    <main>
+        <div id="loading-screen">
+            <span id="dot1">.</span><span id="dot2">.</span><span id="dot3">.</span>loading
         </div>
-        <div class="desktop-icon">
-            <img src="assets/icons/home.jpg" height="64px" width="64px">
-            <p id="app-name">My Computer</p>
+        <div class="desktop-icons">
+            <div class="desktop-icon" id="myProjects">
+                <img src="assets/icons/projects.jpg" height="64px" width="64px">
+                <p class="app-name">My Projects</p>
+            </div>
+            <div class="desktop-icon" id="myComputer">
+                <img src="assets/icons/home.jpg" height="64px" width="64px">
+                <p class="app-name">My Computer</p>
+            </div>
+            <div class="desktop-icon" id="aboutMe">
+                <img src="assets/icons/about.jpg" height="64px" width="64px">
+                <p class="app-name">About Me</p>
+            </div>
+            <div class="desktop-icon" id="contactMe">
+                <img src="assets/icons/contact.jpg" height="70px" width="70px">
+                <p class="app-name">Mail</p>
+            </div>
         </div>
-        <div class="desktop-icon">
-            <img src="assets/icons/about.jpg" height="64px" width="64px">
-            <p id="app-name">About Me</p>
+
+        <div id="homePage">
+            <div class="buttonBar">
+                <button class="closeBtn">.</button>
+                <button class="maximizeBtn">.</button>
+            </div>
+            <div class="searchBar"></div>
+            <div class="navBar"> <img src="assets/icons/home.jpg"> </div>
+            <div class="infoTab-h"> <img src="assets/icons/file.jpg"></div>
         </div>
-        <div class="desktop-icon">
-            <img src="assets/icons/contact.jpg" height="70px" width="70px">
-            <p id="app-name">Mail</p>
-        </div>
-    </div>
-    
+    </main>
+
     <footer>
         <div class="taskbar">
+            <button id="startBtn">
+                <img src="assets/icons/startBtn.png" height="45px" width="45px">
+            </button>
 
+            <div id="sideInfo">
+
+            </div>
         </div>
     </footer>
 </body>
