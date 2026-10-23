@@ -1,12 +1,36 @@
-body{
-    background-image:url(images/image4.png);
+body {
+    background-image: url(assets/wallpaper/image4.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(48, 46, 46);
+    font-family: "Press Start 2P";
 }
 
-.desktop-icons{
+.desktop-icons {
     display: flex;
     flex-direction: column;
-    color: gray;
+    color: lightgrey;
+}
+
+.desktop-icons p {
+
+    text-shadow: 1.5px 1.5px 2.5px black;
+    font-size: 12px;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
 }
