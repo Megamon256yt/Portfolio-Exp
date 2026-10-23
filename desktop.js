@@ -71,3 +71,11 @@ document.addEventListener("mousemove", (event) => {
 document.addEventListener("mouseup", () => {
     isDragging = false;
 });
+
+const signInBtn= document.querySelector("#signInBtn")
+
+signInBtn.addEventListener('click',()=>{
+    document.querySelector("#lock-screen").classList.add("sign-in")
+})
+
+
