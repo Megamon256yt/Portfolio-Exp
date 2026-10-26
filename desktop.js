@@ -14,6 +14,7 @@ const localMins = date.getMinutes()
 const localDate = date.getDate()
 const localMonth = date.getMonth()
 const localYear = date.getFullYear()
+const localDay = date.getDay()
 
 const timeBar = document.querySelector("#sideInfo")
 
@@ -21,10 +22,10 @@ timeBar.innerHTML = `<div class="timeShow"><div class="time">${localHours}:${loc
 
 
 const myComputer = document.querySelector("#myComputer")
-const page = document.getElementById("homePage")
+const homePagepage = document.getElementById("homePage")
 myComputer.addEventListener('dblclick', () => {
 
-    page.classList.add("show")
+    homePage.classList.add("show")
 
 })
 
@@ -78,4 +79,17 @@ signInBtn.addEventListener('click',()=>{
     document.querySelector("#lock-screen").classList.add("sign-in")
 })
 
+const infoTab = document.querySelector(".infoTab-h")
 
+const numberOfIconsHP=infoTab.querySelectorAll("img")
+
+document.querySelector("#numberOfIcon-h").innerHTML=`${numberOfIconsHP.length} items.<br> Doubleclick to open`
+
+
+const aboutMe = document.querySelector("#aboutMe")
+const aboutPage = document.getElementById("aboutPage")
+aboutMe.addEventListener('dblclick', () => {
+
+    aboutPage.classList.add("show")
+
+})

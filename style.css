@@ -1,3 +1,7 @@
+:root{
+    
+}
+
 body {
     background-image: url(assets/wallpaper/image4.png);
     background-repeat: no-repeat;
@@ -107,9 +111,8 @@ body {
     position: absolute;
 
     background-color: #e5e5e5;
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    grid-template-areas: "header header" "sidebar main";
+    display:flex;
+    flex-direction: column;
     border: 2px solid black;
 
     border-radius: 8px;
@@ -128,26 +131,68 @@ body {
 
 .buttonBar {
     display: flex;
-    justify-content: end;
     align-items: center;
+    justify-content: space-between;
     flex-direction: row-reverse;
     background-color: #c0c0c0;
     grid-area: header;
     gap: 2px;
+    cursor: grab;
+    user-select: none;
+    height: 40px;
 }
-
+.buttonBar:active {
+    cursor: grabbing;
+}
 .searchBar {
+    grid-area: searchbar;
     background-color: #c0c0c0;
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navBar {
-    grid-area: sidebar;
+.backButton{
     background-color: #d6d6d6;
+    border: 1px solid black;
+    margin:10px;
+    
+    border: 2px solid #888;
+    border-radius: 5px;
+    
+}
+.address{
+    background-color: #d6d6d6;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #888;
+    padding: 4px 8px;
+    width: 100%;
+    pointer-events: none;
+    border-radius: 5px
+}
+
+.container-h { 
+  display: flex; 
+  align-items: stretch;
+  width: 100vw; 
+  height: 100vh;
+}
+.navBar {
+    background-color: #d6d6d6;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 10px;
 }
 
 .infoTab-h {
+    display:flex;
+    flex-direction: row;
+    gap:5px;
     background-color: #e5e5e5;
-    grid-area: main;
+    
 }
 
 .closeBtn {
@@ -162,15 +207,6 @@ body {
     border: 1px solid black;
 }
 
-.buttonBar {
-    cursor: grab;
-    user-select: none;
-}
-
-.buttonBar:active {
-    cursor: grabbing;
-}
-
 #lock-screen {
     position: fixed;
     inset: 0;
@@ -182,7 +218,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* rgba(3, 46, 1,0.5) */
     backdrop-filter: blur(10px);
     z-index: 9998;
     transform: translateY(0);
@@ -224,10 +261,41 @@ body {
 }
 
 
+#welcomeText{
+    color: #ffffff;
+}
+#aboutPage {
+    display: none;
 
+}
 
+#aboutPage.show {
+    position: absolute;
 
-/* 
-    animation-name: sign-in;
-    animation-duration: 0.5ms;
-    animation-direction: forward; */
+    background-color: #e5e5e5;
+    display:flex;
+    flex-direction: column;
+    border: 2px solid black;
+
+    border-radius: 8px;
+    width: 50vw;
+    height: 50vh;
+    left: 20%;
+    top: 15%;
+    z-index: 10;
+
+}
+.container-a { 
+  display: flex; 
+  align-items: stretch;
+  width: 100vw; 
+  height: 100vh;
+}
+
+.infoTab-a {
+    display:flex;
+    flex-direction: row;
+    gap:5px;
+    background-color: #e5e5e5;
+    
+}
