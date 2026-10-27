@@ -27,9 +27,9 @@ function renderApp(appPage, appName, appCode) {
         </div>`
 
     const taskbar = document.querySelector(`#${appPage}Button`)
-    taskbar.innerHTML=`<div><p><img src="assets/icons/${appPage}.jpg" height="45px" width="45px">${appName}</p></div>`
+    taskbar.innerHTML=`<div><p><img src="assets/icons/${appPage}.jpg" height="30px" width="30px">${appName}</p></div>`
     if(taskbar.style.display = "none"){
-        taskbar.style.display="block"
+        taskbar.style.display="flex"
     }
 }
 

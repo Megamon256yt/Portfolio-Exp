@@ -6,7 +6,6 @@
 
 html {
     user-select: none;
-
     overflow: hidden;
 }
 
@@ -191,22 +190,28 @@ body {
 .container-h,.container-a,.container-c,.container-p {
     display: flex;
     align-items: stretch;
-    width: 100vw;
     height: 100vh;
 }
 
 .navBar {
     background-color: #d6d6d6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    flex-shrink: 0;
     border: 1px solid black;
-    padding: 20px;
     font-size: 10px;
+    width: 150px;
+    gap:1rem;
 }
 
 .infoTab-h,.infoTab-a,.infoTab-c,.infoTab-p{
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 2rem;
     background-color: #e5e5e5;
+    
 
 }
 
@@ -284,6 +289,11 @@ body {
 .showInTaskBar{
     display: flex;
     gap:10px;
+    align-items: start;
+    justify-content: start;
 
 }
 
+#homeButton,#aboutButton,#contactButton,#projectsButton{
+   font-size: 12px;
+}
