@@ -22,7 +22,7 @@ timeBar.innerHTML = `<div class="timeShow"><div class="time">${localHours}:${loc
 
 
 const myComputer = document.querySelector("#myComputer")
-const homePagepage = document.getElementById("homePage")
+const homePage = document.getElementById("homePage")
 myComputer.addEventListener('dblclick', () => {
 
     homePage.classList.add("show")
@@ -32,58 +32,61 @@ myComputer.addEventListener('dblclick', () => {
 const closeBtn = document.querySelector(".closeBtn")
 
 closeBtn.addEventListener('click', () => {
-    if (page.classList.contains("show")) {
-        page.classList.remove("show")
+    if (homePage.classList.contains("show")) {
+        homePage.classList.remove("show")
     }
 })
 
 const minimizeBtn = document.querySelector(".maximizeBtn")
 
 minimizeBtn.addEventListener('click', () => {
-    page.classList.toggle("fs")
+    homePage.classList.toggle("fs")
 })
 
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
+let isDraggingH = false;
+let offsetXH = 0;
+let offsetYH = 0;
 
-const titleBar = document.querySelector(".buttonBar");
+let zIndex = 1
+const titleBarH = document.querySelector(".buttonBar-h");
 
-titleBar.addEventListener("mousedown", (event) => {
+titleBarH.addEventListener("mousedown", (event) => {
     if (event.target.closest("button")) return;
 
-    isDragging = true;
+    homePage.style.zIndex = zIndex
+    isDraggingH = true;
 
-    const rect = page.getBoundingClientRect();
-    console.log(rect.left ,rect.top)
-    offsetX = event.clientX - rect.left;
-    offsetY = event.clientY - rect.top;
+    const rect = homePage.getBoundingClientRect();
+    console.log(rect.left, rect.top)
+    offsetXH = event.clientX - rect.left;
+    offsetYH = event.clientY - rect.top;
 
-    page.style.zIndex = 99;
+    zIndex++
+    homePage.style.zIndex = zIndex
 });
 
 document.addEventListener("mousemove", (event) => {
-    if (!isDragging) return;
+    if (!isDraggingH) return;
 
-    page.style.left = `${event.clientX - offsetX}px`;
-    page.style.top = `${event.clientY - offsetY}px`;
+    homePage.style.left = `${event.clientX - offsetXH}px`;
+    homePage.style.top = `${event.clientY - offsetYH}px`;
 });
 
 document.addEventListener("mouseup", () => {
-    isDragging = false;
+    isDraggingH = false;
 });
 
-const signInBtn= document.querySelector("#signInBtn")
+const signInBtn = document.querySelector("#signInBtn")
 
-signInBtn.addEventListener('click',()=>{
+signInBtn.addEventListener('click', () => {
     document.querySelector("#lock-screen").classList.add("sign-in")
 })
 
 const infoTab = document.querySelector(".infoTab-h")
 
-const numberOfIconsHP=infoTab.querySelectorAll("img")
+const numberOfIconsHP = infoTab.querySelectorAll("img")
 
-document.querySelector("#numberOfIcon-h").innerHTML=`${numberOfIconsHP.length} items.<br> Doubleclick to open`
+document.querySelector("#numberOfIcon-h").innerHTML = `${numberOfIconsHP.length} items.<br> Doubleclick to open`
 
 
 const aboutMe = document.querySelector("#aboutMe")
@@ -93,3 +96,33 @@ aboutMe.addEventListener('dblclick', () => {
     aboutPage.classList.add("show")
 
 })
+
+let isDraggingA = false;
+let offsetXA = 0;
+let offsetYA = 0;
+const titleBarA = document.querySelector(".buttonBar-a")
+titleBarA.addEventListener("mousedown", (event) => {
+    if (event.target.closest("button")) return;
+    aboutPage.style.zIndex = zIndex
+    isDraggingA = true;
+
+    const rect = aboutPage.getBoundingClientRect();
+    console.log(rect.left, rect.top)
+    offsetXA = event.clientX - rect.left;
+    offsetYA = event.clientY - rect.top;
+
+    zIndex++
+    aboutPage.style.zIndex = zIndex
+});
+
+
+document.addEventListener("mousemove", (event) => {
+    if (!isDraggingA) return;
+
+    aboutPage.style.left = `${event.clientX - offsetXA}px`;
+    aboutPage.style.top = `${event.clientY - offsetYA}px`;
+});
+
+document.addEventListener("mouseup", () => {
+    isDraggingA = false;
+});

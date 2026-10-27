@@ -129,7 +129,7 @@ body {
     height: 95vh;
 }
 
-.buttonBar {
+.buttonBar-a,.buttonBar-h {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -141,7 +141,10 @@ body {
     user-select: none;
     height: 40px;
 }
-.buttonBar:active {
+.buttonBar-a:active {
+    cursor: grabbing;
+}
+.buttonBar-h:active {
     cursor: grabbing;
 }
 .searchBar {
