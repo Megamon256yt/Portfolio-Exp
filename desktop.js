@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 })
 
+
 const date = new Date()
 const localHours = date.getHours()
 const localMins = date.getMinutes()
@@ -25,22 +26,29 @@ const myComputer = document.querySelector("#myComputer")
 const homePage = document.getElementById("homePage")
 myComputer.addEventListener('dblclick', () => {
 
-    homePage.classList.add("show")
+    homePage.classList.add("showH")
+    addTaskbarButton("homePage", "My Computer");
+
 
 })
 
 const closeBtn = document.querySelector(".closeBtn")
 
 closeBtn.addEventListener('click', () => {
-    if (homePage.classList.contains("show")) {
-        homePage.classList.remove("show")
+    if (homePage.classList.contains("showH")) {
+        homePage.classList.remove("showH")
     }
 })
 
-const minimizeBtn = document.querySelector(".maximizeBtn")
+const maximizeBtnH = document.querySelector("#homePage").querySelector(".maximizeBtn")
 
-minimizeBtn.addEventListener('click', () => {
-    homePage.classList.toggle("fs")
+maximizeBtnH.addEventListener('click', () => {
+    homePage.classList.toggle("fsH")
+    if (homePage.classList.contains("fsH")) {
+        homePage.style.top = 0
+        homePage.style.left = 0
+    }
+
 })
 
 let isDraggingH = false;
@@ -63,6 +71,14 @@ titleBarH.addEventListener("mousedown", (event) => {
 
     zIndex++
     homePage.style.zIndex = zIndex
+
+    if (homePage.classList.contains("fsH")) {
+        if (isDraggingH) {
+            homePage.classList.remove("fsH")
+        }
+    }
+
+
 });
 
 document.addEventListener("mousemove", (event) => {
@@ -93,13 +109,15 @@ const aboutMe = document.querySelector("#aboutMe")
 const aboutPage = document.getElementById("aboutPage")
 aboutMe.addEventListener('dblclick', () => {
 
-    aboutPage.classList.add("show")
+    aboutPage.classList.add("showA")
+    addTaskbarButton("aboutPage", "About Me");
 
 })
 
 let isDraggingA = false;
 let offsetXA = 0;
 let offsetYA = 0;
+
 const titleBarA = document.querySelector(".buttonBar-a")
 titleBarA.addEventListener("mousedown", (event) => {
     if (event.target.closest("button")) return;
@@ -113,6 +131,12 @@ titleBarA.addEventListener("mousedown", (event) => {
 
     zIndex++
     aboutPage.style.zIndex = zIndex
+
+    if (aboutPage.classList.contains("fsA")) {
+        if (isDraggingA) {
+            aboutPage.classList.remove("fsA")
+        }
+    }
 });
 
 
@@ -126,3 +150,15 @@ document.addEventListener("mousemove", (event) => {
 document.addEventListener("mouseup", () => {
     isDraggingA = false;
 });
+
+const maximizeBtnA = aboutPage.querySelector(".maximizeBtn")
+
+maximizeBtnA.addEventListener('click', () => {
+    aboutPage.classList.toggle("fsA")
+    if (aboutPage.classList.contains("fsA")) {
+        aboutPage.style.top = 0
+        aboutPage.style.left = 0
+    }
+})
+
+const taskbar = document.querySelector(".showInTaskBar");

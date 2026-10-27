@@ -1,5 +1,13 @@
-:root{
-    
+:root {
+    --folder-bg-color: #e5e5e5;
+    --folder-dark-bg-color: #c0c0c0;
+    --desktop-text-color: lightgrey;
+}
+
+html {
+    user-select: none;
+
+    overflow: hidden;
 }
 
 body {
@@ -14,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     color: lightgrey;
+    width: 64px;
 }
 
 .desktop-icons p {
@@ -107,11 +116,11 @@ body {
 
 }
 
-#homePage.show {
+#homePage.showH {
     position: absolute;
 
     background-color: #e5e5e5;
-    display:flex;
+    display: flex;
     flex-direction: column;
     border: 2px solid black;
 
@@ -124,12 +133,16 @@ body {
 
 }
 
-#homePage.fs {
-    width: 95vw;
-    height: 95vh;
+#homePage.fsH {
+    width: 99vw;
+    height: 99vh;
+    top: 0;
+    left: 0;
 }
 
-.buttonBar-a,.buttonBar-h {
+
+.buttonBar-a,
+.buttonBar-h {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -141,12 +154,15 @@ body {
     user-select: none;
     height: 40px;
 }
+
 .buttonBar-a:active {
     cursor: grabbing;
 }
+
 .buttonBar-h:active {
     cursor: grabbing;
 }
+
 .searchBar {
     grid-area: searchbar;
     background-color: #c0c0c0;
@@ -156,16 +172,17 @@ body {
     align-items: center;
 }
 
-.backButton{
+.backButton {
     background-color: #d6d6d6;
     border: 1px solid black;
-    margin:10px;
-    
+    margin: 10px;
+
     border: 2px solid #888;
     border-radius: 5px;
-    
+
 }
-.address{
+
+.address {
     background-color: #d6d6d6;
     font-size: 10px;
     display: flex;
@@ -177,12 +194,13 @@ body {
     border-radius: 5px
 }
 
-.container-h { 
-  display: flex; 
-  align-items: stretch;
-  width: 100vw; 
-  height: 100vh;
+.container-h {
+    display: flex;
+    align-items: stretch;
+    width: 100vw;
+    height: 100vh;
 }
+
 .navBar {
     background-color: #d6d6d6;
     border: 1px solid black;
@@ -191,11 +209,11 @@ body {
 }
 
 .infoTab-h {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    gap:5px;
+    gap: 5px;
     background-color: #e5e5e5;
-    
+
 }
 
 .closeBtn {
@@ -233,7 +251,7 @@ body {
     transform: translateY(-100%);
     pointer-events: none;
 }
- 
+
 
 
 #avatar-parent {
@@ -250,33 +268,35 @@ body {
     flex-direction: column;
 }
 
-#avatar img{
+#avatar img {
     width: 120px;
     aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
-@keyframes sign-in{
-    0%{}
-    100%{
-        bottom:100vh;
+@keyframes sign-in {
+    0% {}
+
+    100% {
+        bottom: 100vh;
     }
 }
 
 
-#welcomeText{
+#welcomeText {
     color: #ffffff;
 }
+
 #aboutPage {
     display: none;
 
 }
 
-#aboutPage.show {
+#aboutPage.showA {
     position: absolute;
 
     background-color: #e5e5e5;
-    display:flex;
+    display: flex;
     flex-direction: column;
     border: 2px solid black;
 
@@ -288,17 +308,28 @@ body {
     z-index: 10;
 
 }
-.container-a { 
-  display: flex; 
-  align-items: stretch;
-  width: 100vw; 
-  height: 100vh;
+
+#aboutPage.fsA {
+    width: 99vw;
+    height: 99vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.container-a {
+    display: flex;
+    align-items: stretch;
+    width: 100vw;
+    height: 100vh;
 }
 
 .infoTab-a {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    gap:5px;
+    gap: 5px;
     background-color: #e5e5e5;
-    
+
 }
+
