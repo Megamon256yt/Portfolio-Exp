@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="render.js" defer></script>
     <script src="desktop.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +24,13 @@
             <div id="avatar-parent">
                 <div id="avatar">
                     <img src="assets/icons/pfp.jpg">
-                    <p>Welcome Adhira!</p>
+                    <p id="welcomeText">Welcome Adhira!</p>
                 </div>
                 <button id="signInBtn">Sign In -></button>
             </div>
+
         </div>
-        
+
         <div class="desktop-icons">
             <div class="desktop-icon" id="myProjects">
                 <img src="assets/icons/projects.jpg" height="64px" width="64px">
@@ -50,14 +51,18 @@
         </div>
 
         <div id="homePage">
-            <div class="buttonBar">
-                <button class="closeBtn">.</button>
-                <button class="maximizeBtn">.</button>
-            </div>
-            <div class="searchBar"></div>
-            <div class="navBar"> <img src="assets/icons/home.jpg"> </div>
-            <div class="infoTab-h"> <img src="assets/icons/file.jpg"></div>
         </div>
+
+        <div id="aboutPage"> 
+        </div>
+
+        <div id="contactPage">
+        </div>
+
+        <div id="projectsPage">
+        </div>
+
+
     </main>
 
     <footer>
@@ -66,9 +71,21 @@
                 <img src="assets/icons/startBtn.png" height="45px" width="45px">
             </button>
 
+            <div class="showInTaskBar">
+                
+                <div id="homeButton"></div>
+                <div id="projectsButton"></div>
+                <div id="contactButton"></div>
+                <div id="aboutButton"></div>
+
+            </div>
+
+
             <div id="sideInfo">
 
             </div>
+
+
         </div>
     </footer>
 </body>
