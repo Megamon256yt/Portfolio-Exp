@@ -96,6 +96,8 @@ function appWorking(appCode,appName,appPage){
     });
     const items = infoTab.querySelectorAll("img");
     countDisplay.innerHTML = `${items.length} items.<br> Doubleclick to open`;
+
+
 }
 
 let globalZIndex = 10;
