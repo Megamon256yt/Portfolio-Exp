@@ -88,6 +88,7 @@ body {
     display: flex;
     justify-content: space-between;
     z-index: 100;
+    max-height: 55px;
 }
 
 #startBtn {
@@ -111,12 +112,11 @@ body {
     align-items: end;
 }
 
-#homePage {
+#homePage,#aboutPage,#contactPage,#projectsPage {
     display: none;
-
 }
 
-#homePage.showH {
+#homePage.showH,#aboutPage.showA,#contactPage.showC,#projectsPage.showP {
     position: absolute;
 
     background-color: #e5e5e5;
@@ -132,17 +132,14 @@ body {
     z-index: 10;
 
 }
-
-#homePage.fsH {
+#homePage.fsH,#aboutPage.fsA,#contactPage.fsC,#projectsPage.fsP {
     width: 99vw;
     height: 99vh;
     top: 0;
     left: 0;
 }
 
-
-.buttonBar-a,
-.buttonBar-h {
+.buttonBar-a,.buttonBar-h,.buttonBar-c,.buttonBar-p{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,11 +152,8 @@ body {
     height: 40px;
 }
 
-.buttonBar-a:active {
-    cursor: grabbing;
-}
 
-.buttonBar-h:active {
+.buttonBar-a:active,.buttonBar-h:active,.buttonBar-c:active,.buttonBar-p:active {
     cursor: grabbing;
 }
 
@@ -194,7 +188,7 @@ body {
     border-radius: 5px
 }
 
-.container-h {
+.container-h,.container-a,.container-c,.container-p {
     display: flex;
     align-items: stretch;
     width: 100vw;
@@ -208,7 +202,7 @@ body {
     font-size: 10px;
 }
 
-.infoTab-h {
+.infoTab-h,.infoTab-a,.infoTab-c,.infoTab-p{
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -287,49 +281,9 @@ body {
     color: #ffffff;
 }
 
-#aboutPage {
-    display: none;
-
-}
-
-#aboutPage.showA {
-    position: absolute;
-
-    background-color: #e5e5e5;
+.showInTaskBar{
     display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-
-    border-radius: 8px;
-    width: 50vw;
-    height: 50vh;
-    left: 20%;
-    top: 15%;
-    z-index: 10;
-
-}
-
-#aboutPage.fsA {
-    width: 99vw;
-    height: 99vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-
-.container-a {
-    display: flex;
-    align-items: stretch;
-    width: 100vw;
-    height: 100vh;
-}
-
-.infoTab-a {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    background-color: #e5e5e5;
+    gap:10px;
 
 }
 
