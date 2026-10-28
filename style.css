@@ -296,4 +296,5 @@ body {
 
 #homeButton,#aboutButton,#contactButton,#projectsButton{
    font-size: 12px;
+   background-color: #aaa8a8;
 }

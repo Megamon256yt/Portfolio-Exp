@@ -1,3 +1,142 @@
+// const appContents = {
+//     home: [
+//                {
+//             name: "Projects",
+//             type: "folder",
+//             icon: "assets/icons/projects.jpg",
+//             children: [
+//                 {
+//                     name: "Portfolio",
+//                     type: "folder",
+//                     children: [
+//                         {
+//                             name: "README.txt",
+//                             type: "file",
+//                             content: "An interactive desktop-style portfolio."
+//                         }
+//                     ]
+//                 }
+//             ]
+//         },
+//         {
+//             name: "Contact",
+//             type: "folder",
+//             icon: "assets/icons/contact.jpg",
+//             children: [
+//                 {
+//                     name: "Email.txt",
+//                     type: "file",
+//                     content: "Add your contact details here."
+//                 }
+//             ]
+//         }
+//     ],
+
+//     about: [
+//            {
+//                     name: "Introduction.txt",
+//                     type: "file",
+//                     content: "Hey! I'm a developer in progress."
+//                 },
+//                 {
+//                     name: "Skills.txt",
+//                     type: "file",
+//                     content: "HTML, CSS, JavaScript, Python, MySQL and Lua."
+//                 },
+//                 {
+//                     name: "Interests",
+//                     type: "folder",
+//                     children: [
+//                         {
+//                             name: "Web Development.txt",
+//                             type: "file",
+//                             content: "I enjoy building things for the web."
+//                         }
+//                     ]
+//                 }
+//
+//         {
+//             name: "Profile.txt",
+//             type: "file",
+//             content: "A student exploring software development."
+//         },
+//         {
+//             name: "Skills",
+//             type: "folder",
+//             children: []
+//         },
+//         {
+//             name: "Interests",
+//             type: "folder",
+//             children: []
+//         }
+//     ],
+
+//     projects: [
+//         {
+//             name: "Portfolio",
+//             type: "folder",
+//             children: []
+//         },
+//         {
+//             name: "Future Projects",
+//             type: "folder",
+//             children: []
+//         },
+//         {
+//             name: "Ideas.txt",
+//             type: "file",
+//             content: "More projects are loading..."
+//         }
+//     ],
+
+//     contact: [
+//         {
+//             name: "Email.txt",
+//             type: "file",
+//             content: "your-email@example.com"
+//         },
+//         {
+//             name: "GitHub.txt",
+//             type: "file",
+//             content: "Add your GitHub link here."
+//         },
+//         {
+//             name: "LinkedIn.txt",
+//             type: "file",
+//             content: "Add your LinkedIn link here."
+//         }
+//     ]
+// };
+
+const appContents = {
+    home:[
+        {
+            name:"Me",
+            type:"folder",
+            icon:"[folder icon]",
+            children:[]
+        },{
+            name:"this portfolio.txt",
+            type:"file",
+            icon:"[file icon]"
+        },{
+            name:"Recycle Bin",
+            type:"app",
+            icon:"[bin icon]",
+            children:[]
+        }
+    ],
+
+    about:[
+        {
+            name: "Introduction.txt",
+            type: "file",
+            icon:"[file icon]",
+            content: "Hey! I'm a developer in progress."  
+        }
+    ]
+}
 function renderApp(appPage, appName, appCode) {
     const selectApp = document.querySelector(`#${appPage}Page`)
     selectApp.innerHTML = `
@@ -19,21 +158,21 @@ function renderApp(appPage, appName, appCode) {
                 <img src="assets/icons/${appPage}.jpg" height="64px" width="64px">
                 <p id="numberOfIcon-${appCode}"></p>
             </div>
-            <div class="infoTab-${appCode}">
-                <img src="assets/icons/file.jpg" height="64px" width="64px">
-                <img src="assets/icons/file.jpg" height="64px" width="64px">
-                <img src="assets/icons/file.jpg" height="64px" width="64px">
-            </div>
+            <div class="infoTab-${appCode}"></div>
         </div>`
 
     const taskbar = document.querySelector(`#${appPage}Button`)
-    taskbar.innerHTML=`<div><p><img src="assets/icons/${appPage}.jpg" height="30px" width="30px">${appName}</p></div>`
-    if(taskbar.style.display = "none"){
-        taskbar.style.display="flex"
+    taskbar.innerHTML = `<div><p><img src="assets/icons/${appPage}.jpg" height="30px" width="30px">${appName}</p></div>`
+    if (taskbar.style.display = "none") {
+        taskbar.style.display = "flex"
     }
 }
 
-function appWorking(appCode,appName,appPage){
+// function renderInnerApps(appPage) {
+
+// }
+
+function appWorking(appCode, appName, appPage) {
     renderApp(appPage, appName, appCode);
 
     const appWindow = document.getElementById(`${appPage}Page`)
@@ -62,6 +201,13 @@ function appWorking(appCode,appName,appPage){
         }
     });
 
+    const taskBarAppBtn = document.querySelector(`#${appPage}Button`)
+
+    taskBarAppBtn.addEventListener('click', () => {
+        globalZIndex++
+        appWindow.style.zIndex = globalZIndex;
+    })
+
     let isDragging = false;
     let offsetX = 0;
     let offsetY = 0;
@@ -72,8 +218,11 @@ function appWorking(appCode,appName,appPage){
         isDragging = true;
         globalZIndex++;
         appWindow.style.zIndex = globalZIndex;
-        if(!isDragging && globalZIndex>10){
-            globalZIndex=10
+
+
+
+        if (!isDragging && globalZIndex > 10) {
+            globalZIndex = 10
         }
 
         const rect = appWindow.getBoundingClientRect();
@@ -98,30 +247,32 @@ function appWorking(appCode,appName,appPage){
     countDisplay.innerHTML = `${items.length} items.<br> Doubleclick to open`;
 
 
+
 }
 
 let globalZIndex = 10;
 
 const myComputer = document.querySelector("#myComputer")
-const aboutMe =document.querySelector("#aboutMe")
-const contactMe =document.querySelector("#contactMe")
-const myProjects =document.querySelector("#myProjects")
+const aboutMe = document.querySelector("#aboutMe")
+const contactMe = document.querySelector("#contactMe")
+const myProjects = document.querySelector("#myProjects")
 
 myComputer.addEventListener('dblclick', () => {
-    appWorking("h","My Computer","home")
+    appWorking("h", "My Computer", "home")
 });
 
-aboutMe.addEventListener('dblclick',()=>{
-    appWorking("a","About Me","about")
+aboutMe.addEventListener('dblclick', () => {
+    appWorking("a", "About Me", "about")
 })
 
-myProjects.addEventListener('dblclick',()=>{
-    appWorking("p","My Projects","projects")
+myProjects.addEventListener('dblclick', () => {
+    appWorking("p", "My Projects", "projects")
 })
 
-contactMe.addEventListener('dblclick',()=>{
-    appWorking("c","Mail","contact")
+contactMe.addEventListener('dblclick', () => {
+    appWorking("c", "Mail", "contact")
 })
+
 
 
 
