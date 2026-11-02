@@ -1,129 +1,18 @@
-// const appContents = {
-//     home: [
-//                {
-//             name: "Projects",
-//             type: "folder",
-//             icon: "assets/icons/projects.jpg",
-//             children: [
-//                 {
-//                     name: "Portfolio",
-//                     type: "folder",
-//                     children: [
-//                         {
-//                             name: "README.txt",
-//                             type: "file",
-//                             content: "An interactive desktop-style portfolio."
-//                         }
-//                     ]
-//                 }
-//             ]
-//         },
-//         {
-//             name: "Contact",
-//             type: "folder",
-//             icon: "assets/icons/contact.jpg",
-//             children: [
-//                 {
-//                     name: "Email.txt",
-//                     type: "file",
-//                     content: "Add your contact details here."
-//                 }
-//             ]
-//         }
-//     ],
-
-//     about: [
-//            {
-//                     name: "Introduction.txt",
-//                     type: "file",
-//                     content: "Hey! I'm a developer in progress."
-//                 },
-//                 {
-//                     name: "Skills.txt",
-//                     type: "file",
-//                     content: "HTML, CSS, JavaScript, Python, MySQL and Lua."
-//                 },
-//                 {
-//                     name: "Interests",
-//                     type: "folder",
-//                     children: [
-//                         {
-//                             name: "Web Development.txt",
-//                             type: "file",
-//                             content: "I enjoy building things for the web."
-//                         }
-//                     ]
-//                 }
-//
-//         {
-//             name: "Profile.txt",
-//             type: "file",
-//             content: "A student exploring software development."
-//         },
-//         {
-//             name: "Skills",
-//             type: "folder",
-//             children: []
-//         },
-//         {
-//             name: "Interests",
-//             type: "folder",
-//             children: []
-//         }
-//     ],
-
-//     projects: [
-//         {
-//             name: "Portfolio",
-//             type: "folder",
-//             children: []
-//         },
-//         {
-//             name: "Future Projects",
-//             type: "folder",
-//             children: []
-//         },
-//         {
-//             name: "Ideas.txt",
-//             type: "file",
-//             content: "More projects are loading..."
-//         }
-//     ],
-
-//     contact: [
-//         {
-//             name: "Email.txt",
-//             type: "file",
-//             content: "your-email@example.com"
-//         },
-//         {
-//             name: "GitHub.txt",
-//             type: "file",
-//             content: "Add your GitHub link here."
-//         },
-//         {
-//             name: "LinkedIn.txt",
-//             type: "file",
-//             content: "Add your LinkedIn link here."
-//         }
-//     ]
-// };
-
 const appContents = {
     home:[
         {
             name:"Me",
             type:"folder",
-            icon:"[folder icon]",
+            icon:"assets/icons/file.jpg",
             children:[]
         },{
             name:"this portfolio.txt",
             type:"file",
-            icon:"[file icon]"
+            icon:"assets/icons/txtfile.jpg"
         },{
             name:"Recycle Bin",
             type:"app",
-            icon:"[bin icon]",
+            icon:"assets/icons/bin.jpg",
             children:[]
         }
     ],
@@ -132,8 +21,55 @@ const appContents = {
         {
             name: "Introduction.txt",
             type: "file",
-            icon:"[file icon]",
+            icon:"assets/icons/txtfile.jpg",
             content: "Hey! I'm a developer in progress."  
+        },{
+            name:"Education.txt",
+            type:"file",
+            icon:"assets/icons/txtfile.jpg",
+            content:"I am a student studying in SIU STAI ,exploring software development.<br> I'm from Hyderabad-Studied 10th in Cornerstone School and 12th in Impulse Junior College. "
+        },{
+            name:"Fun facts.txt",
+            type:"file",
+            icon:"assets/icons/txtfile.jpg",
+            content:"I enjoy building games and exploring new technologies.<br>I started coding when I was 9 years old and have been into game development ever since!<br> I also love reading novels,playing chess,listening to music,dancing, solving puzzles and manyy more."
+        }
+    ],
+
+    projects:[
+        {
+            name:"Portfolio",
+            type:"folder",
+            icon:"assets/icons/file.jpg"
+        },{
+            name:"Future Projects",
+            type:"file",
+            icon:"assets/icons/txtfile.jpg",
+            content:"More projects are loading..."
+        }
+    ],
+
+    contact:[
+        {
+            name:"Email",
+            type:"email",
+            icon:"[email icon]",
+            content:"adhiravinod0523@gmail.com"
+        },{
+            name:"GitHub",
+            type:"github",
+            icon:"[github icon]",
+            content:"https://github.com/Adhira-Vinod"
+        },{
+            name:"LinkedIn",
+            type:"linkedin",
+            icon:"[linkedin icon]",
+            content:"https://linkedin.com/in/Adhira_Vinod"
+        },{
+            name:"Instagram",
+            type:"instagram",
+            icon:"[instagram icon]",
+            content:"https://instagram.com/megamon256yt"
         }
     ]
 }
@@ -161,16 +97,13 @@ function renderApp(appPage, appName, appCode) {
             <div class="infoTab-${appCode}"></div>
         </div>`
 
+
     const taskbar = document.querySelector(`#${appPage}Button`)
     taskbar.innerHTML = `<div><p><img src="assets/icons/${appPage}.jpg" height="30px" width="30px">${appName}</p></div>`
     if (taskbar.style.display = "none") {
         taskbar.style.display = "flex"
     }
 }
-
-// function renderInnerApps(appPage) {
-
-// }
 
 function appWorking(appCode, appName, appPage) {
     renderApp(appPage, appName, appCode);
@@ -245,7 +178,6 @@ function appWorking(appCode, appName, appPage) {
     });
     const items = infoTab.querySelectorAll("img");
     countDisplay.innerHTML = `${items.length} items.<br> Doubleclick to open`;
-
 
 
 }
